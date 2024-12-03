@@ -1,0 +1,64 @@
+@keyframes slide-top {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@mixin slide-top-start {
+  opacity: 0;
+  transform: translateY(100px);
+}
+@mixin slide-top-anim {
+  animation: slide-top 0.4s linear both;
+}
+// ############################################################
+@keyframes slide-right {
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@mixin slide-right-start {
+  opacity: 0;
+  transform: translateX(100px);
+}
+@mixin slide-right-anim {
+  animation: slide-right 0.4s linear both;
+}
+// ############################################################
+@keyframes slide-left {
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@mixin slide-left-start {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+@mixin slide-left-anim {
+  animation: slide-right 0.4s linear both;
+}
+// ############################################################
+@keyframes wobble-hor-bottom {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}

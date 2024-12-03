@@ -1,0 +1,38 @@
+.more-free {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    column-gap: 24px;
+    @include adaptive-property(padding-block, 10, 20, 20);
+    
+    @include onTablet {
+      flex-direction: row;
+    }
+  }
+  &__text {
+      flex: 1 1 50%;
+      font-size: 23px;
+      font-weight: 500;
+      @include slide-right-start;
+    }
+  &__title {
+      flex: 1 1 50%;
+      @extend %section-title;
+      text-align-last: left;
+      margin-bottom: 32px;
+      @include slide-left-start;
+    }
+  
+  &__title:not(:last-child) {
+    @include onTablet{
+      margin-bottom: 10px;
+    }
+  }
+}
+.scroll-anim.active .more-free__title {
+  @include slide-left-anim;
+}
+.scroll-anim.active .more-free__text {
+  @include slide-right-anim;
+  animation-delay: 0.3s;
+}

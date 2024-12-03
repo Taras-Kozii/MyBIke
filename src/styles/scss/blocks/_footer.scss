@@ -1,0 +1,15 @@
+.footer {
+  &__img {
+    position: relative;
+    max-width: 100%;
+    @include adaptive-property(height, 200, 480, 555);
+    background-image: var(--image-url);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    img {
+      display: none;
+    }
+  }
+}

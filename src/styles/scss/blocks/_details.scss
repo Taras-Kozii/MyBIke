@@ -1,0 +1,22 @@
+.details {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include adaptive-property(row-gap, 40, 48, 48);
+    padding: 10px 0;
+  }
+  &__title {
+    @extend %section-title;
+    color: #fff;
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+
+    @include adaptive-property(row-gap, 40, 48, 48);
+  }
+  &__button {
+    @extend %section-button;
+  }
+}

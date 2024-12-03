@@ -1,0 +1,122 @@
+.menu {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+    margin-bottom: 40px;
+  }
+  &__link {
+    position: relative;
+    color: #1d1d1d;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+  &__link:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    width: 0;
+    left: 50%;
+    height: 2px;
+    background-color: #1d1d1d;
+    transition: 0$transition-duraction ease-in;
+  }
+  &__link:hover:before {
+    width: 100%;
+    left: 0;
+    transition: 0.4s ease-in-out;
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+  &__links-item {
+    position: relative;
+    width: max-content;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1d1d1d;
+  }
+  &__links-item:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: #1d1d1d;
+    transition: $transition-duraction ease-in;
+  }
+  &__links-item:hover:before {
+    width: 100%;
+    left: 0;
+    transition:$transition-duraction ease-in-out;
+  }
+  &__phone {
+    font-size: 16px;
+    line-height: 1.68; /* 27/16 */
+  }
+}
+
+.burger {
+  position: relative;
+  @include adaptive-property(width, 24, 32, 32);
+  @include adaptive-property(height, 16, 24, 24);
+  cursor: pointer;
+  z-index: 3;
+
+  &:before,
+  &:after,
+  & span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: 0.4s ease-in;
+  }
+  &:before,
+  &:after {
+    content: "";
+  }
+  &:before {
+    top: 0;
+  }
+  &:after {
+    bottom: 0;
+  }
+  & span {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &:hover:not(.active):before {
+    width: 80%;
+  }
+  &:hover:not(.active):after {
+    width: 50%;
+  }
+}
+.burger.active span {
+  opacity: 0;
+  transform: scale(0);
+}
+.burger.active:before {
+  top: 50%;
+  transform: rotate(-45deg) translateY(-50%);
+  background-color: $bg-color;
+}
+.burger.active:after {
+  top: 50%;
+  transform: rotate(45deg) translateY(-50%);
+  background-color: $bg-color;
+}

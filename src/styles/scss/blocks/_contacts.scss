@@ -1,0 +1,117 @@
+.contacts {
+  &__title {
+    @extend %section-title;
+    margin-bottom: 48px;
+  }
+  &__text {
+    display: grid;
+    column-gap: 20px;
+
+    @include onTablet {
+      grid-template-columns: repeat (6, 1fr);
+      column-gap: 24px;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    @include slide-right-start;
+
+    @include onTablet {
+      grid-column: 4 / 5;
+    }
+    @include onDesktop {
+      grid-column: 8 / 11;
+    }
+  }
+  &__sub-title {
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: left;
+  }
+  &__link {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: left;
+    color: #fff;
+
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #fff;
+      transition: 0.4s;
+    }
+    &:hover::before {
+      width: 100%;
+      left: 0;
+      transition: $transition-duraction ease-in-out;
+    }
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  background-color: $bg-color;
+  @include slide-left-start;
+
+
+  @include onTablet {
+    grid-column: 1 / 4;
+  }
+  @include onDesktop {
+    grid-column: 1 / 6;
+  }
+
+  textarea {
+    border-radius: 16px;
+    min-height: 148px;
+    margin-bottom: 20px;
+    font-family: inherit;
+    background: #F8F8FA;
+  }
+  &__submit {
+    @extend %section-button;
+    margin-bottom: 48px;
+  }
+  &__item {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42; /* 20px/14 */
+    letter-spacing: 0px;
+    text-align: left;
+    border-radius: 40px;
+    color: #292929;
+    background: #F8F8FA;
+  }
+  &__item::placeholder {
+    color: #7e7e83;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+  }
+  &__item:hover::placeholder &__item:hover,
+  &__item:focus {
+    color: #292929;
+  }
+}
+.scroll-anim.active .form {
+  @include slide-left-anim;
+}
+.scroll-anim.active .contacts__items {
+  @include slide-right-anim;
+  animation-delay: 0.3s;
+}

@@ -1,0 +1,19 @@
+.main {
+  flex: 1 1 auto;
+
+  &__fullscreen {
+    @include adaptive-property(margin-bottom, 50, 100, 100);
+  }
+  &__more-free {
+    @include adaptive-property(margin-bottom, 82, 112, 144);
+  }
+  &__bikes {
+    @include adaptive-property(margin-bottom, 92, 120, 144);
+  }
+  &__details {
+    @include adaptive-property(margin-bottom, 70, 110, 170);
+  }
+  &__contacts {
+    @include adaptive-property(margin-bottom, 120, 54, 116);
+  }
+}

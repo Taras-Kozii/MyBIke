@@ -1,0 +1,38 @@
+%section-title {
+  font-weight: 500;
+  letter-spacing: -1.5px;
+  text-align: center;
+  line-height: 1;
+  @include adaptive-property(font-size, 32, 48, 64);
+}
+%section-subtitle {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+}
+%section-button {
+  @include adaptive-property(width, 280, 392, 324);
+  height: 56px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 0px 48px 0px 48px;
+  border-radius: 40px;
+  background-color: #fff;
+  color: $bg-color;
+  cursor: pointer;
+  
+  font-weight: 700;
+  line-height: 1.68; /* 27/16 */
+  box-shadow: none;
+  transition: 0.4s ease-in;
+  
+  &:hover {
+    box-shadow: 1px 4px 16px 0px rgba(232, 232, 240, 0.4);
+    transition: $transition-duraction ease-in-out;
+  }
+  
+}

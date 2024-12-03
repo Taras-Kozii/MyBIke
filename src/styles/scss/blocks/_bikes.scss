@@ -1,0 +1,53 @@
+.bikes {
+  &__title {
+    @extend %section-title;
+    @include adaptive-property(margin-bottom, 48, 48, 56);
+  }
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(280px, 392px));
+    justify-content: center;
+    @include adaptive-property(row-gap, 40, 48, 48);
+
+    @include onDesktop() {
+      grid-template-columns: repeat(3, minmax(280px, 324px));
+      gap: 24px;
+    }
+  }
+  &__item {
+    position: relative;
+    @include slide-top-start;
+  }
+  &__img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 324 / 256;
+    margin-bottom: 32px;
+
+    img {
+    @include ibg;
+    transition: $transition-duraction ease-in;
+
+    &:hover {
+      transform: translateY(-20px) scale(1.1) rotate(-10deg);
+      transition: $transition-duraction ease-in-out;
+    }
+    }
+  }
+  &__sub-title {
+    @extend %section-subtitle;
+    margin-bottom: 8px;
+  }
+  &__text {
+    margin-bottom: 16px;
+  }
+  &__text p:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  &__prise {
+    @extend %section-subtitle;
+  }
+}
+.scroll-anim.active .bikes__item {
+  @include slide-top-anim;
+}
