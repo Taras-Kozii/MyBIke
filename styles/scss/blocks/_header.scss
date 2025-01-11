@@ -47,6 +47,7 @@
     }
 
     &::before {
+      display: none;
       content: attr(data-text);
       width: max-content;
       position: absolute;
@@ -66,8 +67,13 @@
       transform: translateY(-50%);
       pointer-events: none;
       transition: $transition-duraction;
+      @include onTablet {
+        display: inline-block;
+      }
     }
     &:hover:before {
+      outline: none;
+      text-decoration: none;
       opacity: 1;
       transition: 0.4s;
       pointer-events: auto;

@@ -389,6 +389,7 @@ body {
           transform: translateY(-5px) scale(1.15);
 }
 .header__phone::before {
+  display: none;
   content: attr(data-text);
   width: -webkit-max-content;
   width: -moz-max-content;
@@ -412,7 +413,14 @@ body {
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
+@media (min-width: 576px) {
+  .header__phone::before {
+    display: inline-block;
+  }
+}
 .header__phone:hover:before {
+  outline: none;
+  text-decoration: none;
   opacity: 1;
   -webkit-transition: 0.4s;
   transition: 0.4s;
